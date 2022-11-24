@@ -1,0 +1,89 @@
+[
+  {
+    "category_id": "01",
+    "name": "Bed and Headboard",
+    "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    "location": "3002,Amlapur,Dhaka",
+    "old_price": "$720",
+    "origan_price": "$430",
+    "used_time": "7 month",
+    "seller_name": "Tom jack",
+    "post_time": "2 month",
+    "category_name": "BadRoom"
+  },
+  {
+    "category_id": "01",
+    "name": "Nightstands ",
+    "image": "https://c0.wallpaperflare.com/preview/257/379/599/furnitures-home-indoors-interior-design.jpg",
+    "location": "1022,Jamalpur,Mymensingh",
+    "old_price": "$250",
+    "origan_price": "$90",
+    "used_time": "5 month",
+    "seller_name": "Petter jo",
+    "post_time": "3 month",
+    "category_name": "BadRoom"
+  },
+
+  {
+    "category_id": "02",
+    "name": "Refrigerator",
+    "image": "https://i.pcmag.com/imagery/roundups/00gqDjB5MWsi3LxFrkR49eh-13..v1649269099.jpg",
+    "location": "0023,Netrokona",
+    "old_price": "$630",
+    "origan_price": "$430",
+    "used_time": "1 month",
+    "seller_name": "Boshir Uddin",
+    "post_time": "1 month",
+    "category_name": "kitchenWare"
+  },
+  {
+    "category_id": "02",
+    "name": "Cupboard ",
+    "image": "https://cairocart.com/pub/media/catalog/product/cache/f65e4f3f0d55f7c692e033a9434b3a7f/0/0/0000121245.jpg",
+    "location": "3002,Amlapur,Dhaka",
+    "old_price": "$320",
+    "origan_price": "$130",
+    "used_time": "7 month",
+    "seller_name": "Jolim Shak",
+    "post_time": "4 month",
+    "category_name": "kitchenWare"
+  },
+
+  {
+    "category_id": "02",
+    "name": "Cupboard ",
+    "image": "https://c0.wallpaperflare.com/preview/849/527/681/white-kitchen-cupboards-and-rack-with-dinnerware-arranged-on-it.jpg",
+    "location": "3002,Amlapur,Dhaka",
+    "old_price": "$320",
+    "origan_price": "$130",
+    "used_time": "7 month",
+    "seller_name": "Jolim Shak",
+    "post_time": "4 month",
+    "category_name": "kitchenWare"
+  },
+
+  {
+    "category_id": "03",
+    "name": "Living Sofas ",
+    "image": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "location": "302,Aqua,Dhaka",
+    "old_price": "$600",
+    "origan_price": "$330",
+    "used_time": "9 month",
+    "seller_name": "Jolim Shak",
+    "post_time": "5 month",
+    "category_name": "LivingRoom"
+  },
+  {
+    "category_id": "03",
+    "name": "Wing chair ",
+    "image": "https://c4.wallpaperflare.com/wallpaper/3/867/740/chair-wallpaper-preview.jpg",
+    "location": "1302,Shibdhor,Dhaka",
+    "old_price": "$150",
+    "origan_price": "$80",
+    "used_time": "7 month",
+    "seller_name": "Ali Hossain",
+    "post_time": "3 month",
+    "category_name": "LivingRoom"
+  }
+]

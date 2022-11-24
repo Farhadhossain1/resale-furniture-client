@@ -6,8 +6,9 @@ import logo from '../../../assets/logo-icon/logo.png';
 const Navbar = () => {
     const menuItems = <>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/login'>Login</Link></li>
+                <li><Link to='/signup'>Sign Up</Link></li>
+                <li><Link to='/blog'>Blog</Link></li>
     </>
     return (
         <div className="navbar bg-light flex justify-between">

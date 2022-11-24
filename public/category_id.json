@@ -1,0 +1,17 @@
+[
+  {
+    "category_id": "01",
+    "category_name": "BadRoom",
+    "image": "https://cdn-icons-png.flaticon.com/512/1257/1257281.png"
+  },
+  {
+    "category_id": "02",
+    "category_name": "KitchenWare",
+    "image": "https://cdn-icons-png.flaticon.com/512/5564/5564921.png"
+  },
+  {
+    "category_id": "03",
+    "category_name": "LivingRoom",
+    "image": "https://cdn-icons-png.flaticon.com/512/7594/7594854.png"
+  }
+]
