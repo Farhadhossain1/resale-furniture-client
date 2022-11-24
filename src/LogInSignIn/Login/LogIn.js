@@ -37,7 +37,8 @@ const LogIn = () => {
                             </label>
                             <input type="password" {...register("password",
                              { required: "Password Address is required",
-                             minLength: { value: 6, message: 'Password must be 6 characters or longer' }
+                             minLength: { value: 6, message: 'Password must be 6 characters or longer' },
+                             pattern: {value:/(?=.*[A-Z])(?=.*[0-9])/, message: 'Password must be strong and one uppercase or one number'}
                             },
                              
                             )} placeholder="password" className="input input-bordered w-full "   />
