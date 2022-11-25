@@ -4,7 +4,7 @@ import './DisplayProducts.css';
 
 
 
-const DisplayProducts = ({product}) => {
+const DisplayProducts = ({product, setCategoryProduct}) => {
     const {name, image, location, old_price, origan_price, used_time, seller_name,post_time}= product;
     return (
               <div className="card w-full card-bg  shadow-xl">
@@ -39,7 +39,9 @@ const DisplayProducts = ({product}) => {
         </div>
     </div>
     <div className="card-actions justify-start">
-      <button className="btn button-bg">Buy Now</button>
+      <label htmlFor="product-modal" 
+      onClick={() => setCategoryProduct(product)}
+      className="btn button-bg">Buy Now</label>
     </div>
   </div>
 </div>

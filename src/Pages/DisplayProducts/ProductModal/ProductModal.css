@@ -1,0 +1,9 @@
+.submit-bac {
+  background-image: linear-gradient(
+    to bottom right,
+    #00ffbf,
+    rgb(141, 247, 242)
+  );
+  color: black;
+  border: none;
+}
