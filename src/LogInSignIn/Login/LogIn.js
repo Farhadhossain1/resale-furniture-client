@@ -1,5 +1,7 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import './LogIn.css';
@@ -8,8 +10,21 @@ import './LogIn.css';
 
 const LogIn = () => {
     const { register,  formState: { errors }, handleSubmit } = useForm();
-    const {signIn} = useContext(AuthContext);
+    const {signIn,googleSignUp} = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () =>{
+        googleSignUp(googleProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
    
 
     const handleLogin = data =>{
@@ -28,7 +43,7 @@ const LogIn = () => {
     
     return (
         <div className='h-[800px] flex justify-center items-center'>
-            <div className='w-[510px] p-12 bg-gray-200'>
+            <div className='w-[510px] p-12 bg-form  border-form'>
                 <h2 className='text-3xl text-center  font-bold'>Log In</h2>
 
             <form onSubmit={handleSubmit(handleLogin)}>
@@ -65,9 +80,9 @@ const LogIn = () => {
                                 loginError && <p className='text-red-500'>{loginError}</p>
                             }
             </form>
-            <p>New to AllForm <Link className='text-primary' to="/signup"><strong>Create new Account</strong></Link></p>
+            <p>New to AllForm <Link className='text-secondary' to="/signup"><strong>Create new Account</strong></Link></p>
             <div className="divider">OR</div>
-                <button className='btn btn-outline btn-success w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline btn-success w-full'><FcGoogle className='text-2xl mx-2'></FcGoogle>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );

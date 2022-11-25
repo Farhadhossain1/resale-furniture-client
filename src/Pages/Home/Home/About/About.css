@@ -1,0 +1,18 @@
+.button {
+  background-image: linear-gradient(
+    to bottom right,
+    #00ffbf,
+    rgb(141, 247, 242)
+  );
+  color: black;
+  border: none;
+}
+.button:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    #55bca2,
+    rgb(41, 219, 147)
+  );
+  padding: 16px 10px;
+  font-size: 18px;
+}

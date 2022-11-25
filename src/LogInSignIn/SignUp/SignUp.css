@@ -1,0 +1,10 @@
+.bg-form {
+  background: linear-gradient(45deg, rgb(195, 219, 207), hsl(160, 2%, 33%));
+}
+.bg-form:hover {
+  background: linear-gradient(45deg, rgb(150, 233, 191), hsl(163, 29%, 88%));
+}
+
+.border-form {
+  border-radius: 12px;
+}

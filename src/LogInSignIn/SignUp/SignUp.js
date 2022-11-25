@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import './SignUp.css';
 
 const SignUp = () => {
 
@@ -22,7 +23,7 @@ const SignUp = () => {
     }
     return (
         <div className='h-[800px] flex justify-center items-center'>
-        <div className='w-[510px] p-12 bg-gray-200'>
+        <div className='w-[510px] p-12 bg-form  border-form'>
             <h2 className='text-3xl text-center  font-bold'>Sign up</h2>
 
         <form onSubmit={handleSubmit(handleSignup)}>
@@ -64,12 +65,10 @@ const SignUp = () => {
                         <span className="label-text text-xl ">Forget password</span>
                         </label>
                         </div>
-                        <input className='btn btn-success my-6  text-black w-full' value="Sign up" type="submit" />
+                        <p>Already have an account <Link className='text-secondary' to="/login"><strong>Please Log In</strong></Link></p>
+                        <input className='btn btn-success my-6 text-semibold text-black w-full' value="Sign up" type="submit" />
 
         </form>
-        <p>Already have an account <Link className='text-primary' to="/login"><strong>Please login</strong></Link></p>
-        <div className="divider">OR</div>
-            <button className='btn btn-outline btn-success w-full'>CONTINUE WITH GOOGLE</button>
         </div>
     </div>
     );

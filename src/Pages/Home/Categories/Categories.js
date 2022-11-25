@@ -10,7 +10,7 @@ const Categories = () => {
     }, [])
     return (
         <div>
-            <h2 className='text-center mt-16 text-3xl font-bold'>All Categories</h2>
+            <h2 className='text-center mt-16 text-3xl text-primary font-bold'>All Categories</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 justify-around my-16'>
             {
                 categories.map(category => <DisplayCategories
