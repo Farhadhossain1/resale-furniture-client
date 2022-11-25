@@ -8,7 +8,6 @@ const Banner = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold text-white font-serif">Welcome To AllForm </h1>
             <p className="mb-5 text-white font-semibold">Used AllForm is a modern and minimal furniture store with a lot of great features that any online store needs!</p>
-            <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
       </div>

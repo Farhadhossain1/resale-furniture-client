@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo-icon/logo.png';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import './navbar.css';
 
 
 const Navbar = () => {
@@ -14,18 +15,18 @@ const Navbar = () => {
     })
   }
     const menuItems = <>
-                <li><Link to='/'>Home</Link></li>
+                <li className='font-serif font-semibold'><Link to='/'>Home</Link></li>
                 
-                <li><Link to='/blog'>Blog</Link></li>
+                <li className='font-serif font-semibold'><Link to='/blog'>Blog</Link></li>
                 { 
                 user?.uid ?
-                <li><button onClick={handleLogOut}>Sign Out</button></li>
+                <li className='font-serif font-semibold'><button onClick={handleLogOut}>Sign Out</button></li>
                 :
-                <li><Link to='/login'>Login</Link></li>
+                <li className='font-serif font-semibold'><Link to='/login'>Login</Link></li>
                 }
     </>
     return (
-        <div className="navbar bg-light flex justify-between">
+        <div className="navbar bg-light flex justify-between ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,11 +39,11 @@ const Navbar = () => {
       </ul>
     </div>
     <div>
-    <div className="w-12 rounded-full">
+    <div className="w-14 rounded-full">
           <img src={logo} alt='' />
         </div>
     </div>
-    <Link className="btn btn-ghost normal-case text-xl">Allform</Link>
+    <Link to='/' className="btn btn-ghost normal-case text-xl font-mono"><span className='text-5xl font-bold text-red-900'>A</span>llform</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
@@ -50,9 +51,6 @@ const Navbar = () => {
         menuItems
       }
     </ul>
-  </div>
-  <div className="navbar-end">
-    <Link className="btn">Get started</Link>
   </div>
 </div>
     );
