@@ -22,6 +22,7 @@ const AllProducts = () => {
                     categoryProduct &&
                     <ProductModal
                     categoryProduct ={categoryProduct}
+                    setCategoryProduct = {setCategoryProduct}
                 ></ProductModal>
                 }
         </section>

@@ -7,26 +7,50 @@ import './SignUp.css';
 const SignUp = () => {
 
     const { register,  formState: { errors }, handleSubmit } = useForm();
-    const {createUser} = useContext(AuthContext);
+    const {createUser,updateUser} = useContext(AuthContext);
    
-
-    const handleSignup = data =>{
-        console.log(data);
+    const handleSignUp = (data) => {
+      
         createUser(data.email, data.password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        saveUser(data.name, data.email);
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(error => {
+                console.log(error)
+            
+            });
+    }
+
+    const saveUser = (name, email) =>{
+        const user ={name, email};
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
         })
-        .catch(error => {
-            console.log(error);
+        .then(res => res.json())
+        .then(data =>{
+          
         })
     }
+
     return (
         <div className='h-[800px] flex justify-center items-center'>
         <div className='w-[510px] p-12 bg-form  border-form'>
             <h2 className='text-3xl text-center  font-bold'>Sign up</h2>
 
-        <form onSubmit={handleSubmit(handleSignup)}>
+        <form onSubmit={handleSubmit(handleSignUp)}>
             
 
             <div className="form-control w-full ">
