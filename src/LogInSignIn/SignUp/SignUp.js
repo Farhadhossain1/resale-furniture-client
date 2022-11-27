@@ -20,7 +20,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.log(err));
             })
@@ -30,8 +30,8 @@ const SignUp = () => {
             });
     }
 
-    const saveUser = (name, email) =>{
-        const user ={name, email};
+    const saveUser = (name, email, role) =>{
+        const user ={name, email, role};
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -49,10 +49,7 @@ const SignUp = () => {
         <div className='h-[800px] flex justify-center items-center'>
         <div className='w-[510px] p-12 bg-form  border-form'>
             <h2 className='text-3xl text-center  font-bold'>Sign up</h2>
-
         <form onSubmit={handleSubmit(handleSignUp)}>
-            
-
             <div className="form-control w-full ">
                         <label className="label">
                         <span className="label-text text-xl font-semibold py-4">Name</span>
@@ -61,7 +58,27 @@ const SignUp = () => {
                         {  required: "Name Address is required"}
                         )} placeholder="name" className="input input-bordered w-full "  />
                         {errors.name && <p className='text-red-600 mt-2'>{errors.name?.message}</p>}
-                        </div>
+                        </div> 
+
+                  <div>
+                          <label className="label">
+                            {" "}
+                            <span className="label-text">Select Your Account</span>
+                          </label>
+                          <select
+                            className="select select-bordered w-full"
+                            {...register("role", {
+                              required: "Account Must be Select",
+                            })}
+                          >
+                            <option selected>Buyer</option>
+                            <option>Seller</option>
+                          </select>
+                          {errors.account && (
+                            <p className="text-red-500">{errors.account.message}</p>
+                          )}
+          </div>
+                       
 
             <div className="form-control w-full ">
                         <label className="label">

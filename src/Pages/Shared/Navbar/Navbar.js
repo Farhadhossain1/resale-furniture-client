@@ -23,7 +23,7 @@ const Navbar = () => {
                 user?.uid ?
                 <>
                 <li className='font-serif font-semibold'><button onClick={handleLogOut}>Sign Out</button></li>
-                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li className='font-serif font-semibold'><Link to="/dashboard">Dashboard</Link></li>
                 </>
                 :
                 <li className='font-serif font-semibold'><Link to='/login'>Login</Link></li>
