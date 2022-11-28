@@ -9,6 +9,11 @@ const MyProduct = () => {
 
     const { user } = useContext(AuthContext);
     const [deletingProduct, setDeletingProduct] = useState(null);
+    const [advertiseItem, setAdvertiseItem] = useState(null);
+
+    const advertiseCloseModal = () =>{
+        setAdvertiseItem(null);
+    }
 
     const closeModal = () => {
         setDeletingProduct(null);
@@ -29,7 +34,7 @@ const MyProduct = () => {
         }
     });
 
-
+console.log(advertiseItem)
         
     const handleDeleteProduct = product => {
         fetch(`http://localhost:5000/products/${product._id}`, {
@@ -41,6 +46,16 @@ const MyProduct = () => {
                 refetch();
                 toast.success(`"${product.name}" deleted successfully`)
             }
+        })
+    }
+
+    const handleAdvertiseProduct = (product) =>{
+        fetch(`http://localhost:5000/advertise/${product._id}`, {
+            method: 'PUT', 
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
         })
     }
 
@@ -71,7 +86,7 @@ const MyProduct = () => {
                                   </div>
                                  <div className='flex justify-between'>
                                       <div>
-                                      <button className='btn button font-bold text-black'>Advertise</button>
+                                      <label htmlFor='confirmation-modal' onClick={()=> setAdvertiseItem(product)} className='btn button font-bold text-black'>Advertise</label>
                                       </div>
                                       <div>
                                       <label onClick={() => setDeletingProduct(product)} htmlFor="confirmation-modal" className="btn button text-black font-bold">Delete</label>
@@ -95,6 +110,17 @@ const MyProduct = () => {
                     closeModal = {closeModal}
                     ></ConfirmationModal>
                 }
+            </div>
+            <div>
+                {advertiseItem && 
+                <ConfirmationModal
+                title={`Are you sure you Advertise This Product?`}
+                message={`If you Advertise ${advertiseItem.name}. It cannot be undone.`}
+                successAction = {handleAdvertiseProduct}
+                successButtonName="Advertise"
+                modalData = {advertiseItem}
+                closeModal = {advertiseCloseModal}
+            ></ConfirmationModal>}
             </div>
         </div>
     );
