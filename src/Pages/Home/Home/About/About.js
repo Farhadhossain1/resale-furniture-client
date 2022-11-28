@@ -19,7 +19,7 @@ const About = () => {
                     <p className="py-6 text-xl text-semibold">Looking for a better way to buy furniture online? Furniture.com gathers thousands of quality pieces in one place to make browsing, comparing and coordinating simpler than ever.  </p>
 
                     <p className="py-6 text-xl text-semibold">Our curated collection of sofas, dining tables, bedroom sets, patio furniture, accents and more will connect you with just what you want in a snap.</p>
-                    <button className="btn button">See More Info</button>
+                    <button className="btn button text-black font-bold">See More Info</button>
                 </div>
             </div>
         </div>

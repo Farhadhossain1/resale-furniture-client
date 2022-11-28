@@ -9,6 +9,7 @@ import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProduct from "../../Pages/Dashboard/MyProduct/MyProduct";
 import Home from "../../Pages/Home/Home/Home";
+import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -33,9 +34,9 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/categoryName/:id',
+                path: '/categoryName/:name',
                 element: <AllProducts></AllProducts>,
-                loader: ({params}) => fetch(`http://localhost:5000/categoryName/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/categoryName/${params.name}`)
             }
         ]
     },
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
             }
           
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 
 ]);

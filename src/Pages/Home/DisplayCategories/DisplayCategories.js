@@ -5,7 +5,7 @@ import './DisplayCategories.css';
 const DisplayCategories = ({category}) => {
     const {category_name, image,category_id} = category;
     return (
-        <Link to={`/categoryName/${category_id}`} className="card w-96 category-bg text-primary-content">
+        <Link to={`/categoryName/${category_name}`} className="card w-96 category-bg text-primary-content">
   <div className="card-body">
     <img className='w-28 mx-auto' src={image} alt="" />
     <div className="card-actions justify-center">

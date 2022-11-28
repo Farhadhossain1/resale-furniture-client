@@ -67,7 +67,7 @@ const ProductModal = ({categoryProduct,setCategoryProduct, refetch}) => {
         <input  type="email" name='email' disabled value= {user?.email} className="input input-bordered w-full " readOnly />
         <input type="text" name='location' placeholder="Location" className="input w-full " />
         <input type="text" name='phone' placeholder="Conduct Number" className="input w-full " />
-        <input className=' btn submit-bac' type="submit" value="Submit" />
+        <input className=' btn btn-active btn-primary' type="submit" value="Submit" />
         </form>
   </div>
 </div>

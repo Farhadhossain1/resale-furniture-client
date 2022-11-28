@@ -1,6 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -20,6 +21,7 @@ const LogIn = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            toast.success('User Created Successfully !!!')
         })
         .catch(error =>{
             console.log(error)
@@ -34,6 +36,8 @@ const LogIn = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            // toast.success('log in successfully');
+            toast.success('User Log In successfully !!!')
         })
         .catch(error =>{
             console.log(error.message);

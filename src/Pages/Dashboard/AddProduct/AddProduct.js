@@ -24,6 +24,7 @@ const AddProduct = () => {
       .then(imgData => {
           if(imgData.success){
               console.log(imgData.data.url);
+              toast.success('Add product successfully !!!')
               const product = {
                   
                     old_price: data.old_price,
@@ -52,10 +53,9 @@ const AddProduct = () => {
               })
               .then(res => res.json())
               .then(result =>{
-                  console.log(result);
-                  if(data.acknowledged){
+                  if(result.acknowledged){
                      toast.success(`${data.name} is added successfully`);
-                  navigate('/')
+                  navigate('/dashboard/myProduct')
                   }
                  
               })
