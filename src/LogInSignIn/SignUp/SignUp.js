@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import './SignUp.css';
 
@@ -9,6 +9,10 @@ const SignUp = () => {
 
     const { register,  formState: { errors }, handleSubmit } = useForm();
     const {createUser,updateUser} = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
    
     const handleSignUp = (data) => {
       
@@ -16,13 +20,14 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast.success('User Create Successfully !!!')
                 const userInfo = {
                     displayName: data.name
                 }
                 updateUser(userInfo)
                     .then(() => {
                         saveUser(data.name, data.email, data.role);
+                        navigate(from, {replace: true});
+                        toast.success("Signup Successfully !!!")
                     })
                     .catch(err => console.log(err));
             })

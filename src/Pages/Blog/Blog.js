@@ -3,7 +3,13 @@ import './Blog.css';
 
 const Blog = () => {
     return (
-        <div className='p-32'>
+
+        
+        <div>
+             <div>
+                <h2 className='text-4xl font-semibold text-center text-gray-700 '>Blog Section</h2>
+            </div>
+            <div className='lg:w-4/5 m-auto mt-10 px-3'>
             <div className='py-4 px-8 blog-text'>
                     <h2 className='text-2xl font-semibold font-serif '>What are the different ways to manage a state in a React application?</h2>
                     <p className='text-xl py-4'>In modern React, we build our applications with functional components. Components are themselves JavaScript functions, independent and reusable bits of code.The purpose of building the application with components is to have a modular architecture, with a clear separation of concerns. This makes code easier to understand, easier to maintain, and easier to reuse when possible.The state is an object that holds information about a certain component. Plain JavaScript functions don't have the ability to store information. The code within them executes and "disappears" once the execution is finished.But thanks to state, React functional components can store information even after execution. When we need a component to store or "remember" something, or to act in a different way depending on the environment, state is what we need to make it work this way.</p>
@@ -21,6 +27,7 @@ const Blog = () => {
                 <p className='text-xl py-4'>Angular, developed by Google, was first released in 2010, making it the oldest of the lot. It is a TypeScript-based JavaScript framework. A substantial shift occurred in 2016 on the release of Angular 2 (and the dropping of the “JS” from the original name AngularJS). Angular 2+ is known as just Angular. Although AngularJS (version 1) still gets updates, we will focus the discussion on Angular.
                 Vue, also known as Vue.js, is the youngest member of the group. It was developed by ex-Google employee Evan You in 2014. Over the last several years, Vue has seen a substantial shift in popularity, even though it doesn’t have the backing of a large company.With the availability of thousands of app development, creating an application is not a challenging job but at the same time, if you are assuming that breaking into the mobile app market is the key to success, then you are mistaken. To succeed in this thriving market, it includes in-depth planning, unique strategy, extensive planning and access to top-rated technologies to create an enterprise-level app
                 </p>
+            </div>
             </div>
         </div>
     );

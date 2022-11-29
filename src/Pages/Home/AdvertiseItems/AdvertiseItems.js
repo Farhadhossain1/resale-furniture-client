@@ -19,7 +19,7 @@ const AdvertiseItems = () => {
     console.log(advertises)
     return (
         <div className=''>
-            {advertises.length > 0 && <h1 className='text-3xl font-bold text-gray-700 py-14 text-center'>Advertises Item</h1>}
+            {advertises.length > 0 && <h1 className='text-3xl font-bold text-primary py-14 text-center'>Advertises Item</h1>}
             <div>
                 {advertises.length > 0 && advertises.map(product => <AdvertiseCard key={product._id} product={product}></AdvertiseCard>)}
             </div>

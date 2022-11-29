@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AdvertiseCard = ({product}) => {
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl mt-16 card-bg">
+            <div className="card w-96 bg-base-100 shadow-xl mb-16 card-bg">
                             <figure><img src={product.image} alt="Shoes" /></figure>
                             <div className="card-body">
                               <h2 className="card-title">
@@ -20,6 +21,7 @@ const AdvertiseCard = ({product}) => {
                                   <div>
                                       <h3 className=' font-semibold'> Status : {product.status}</h3>
                                   </div>
+                                  <Link to={`/categoryName/${product.category_name}`}><button className='btn button text-black font-bold'>Go Booking</button></Link>
                     
                             </div>
                           </div>

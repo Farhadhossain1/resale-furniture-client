@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import './LogIn.css';
 
@@ -13,6 +13,10 @@ const LogIn = () => {
     const { register,  formState: { errors }, handleSubmit } = useForm();
     const {signIn,googleSignUp} = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -48,8 +52,8 @@ const LogIn = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
-            // toast.success('log in successfully');
             toast.success('User Log In successfully !!!')
+            navigate(from, {replace: true});
         })
         .catch(error =>{
             console.log(error.message);

@@ -58,7 +58,7 @@ const AllBuyers = () => {
         <th>{i+1}</th>
         <td className='font-bold'>{buyer.name}</td>
         <td className='font-bold'>{buyer.email}</td>
-        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteBuyer(buyer)} className='btn-sm delete-bg font-bold'>Delete</label></td>
+        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteBuyer(buyer)} className='btn delete-bg font-bold'>Delete</label></td>
       </tr>)}
     </tbody>
   </table>

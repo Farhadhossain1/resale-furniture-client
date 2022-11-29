@@ -4,7 +4,7 @@ const CopyRight = () => {
     return (
         <div className='bg-black'>
             <div className='text-center py-12 text-white '>
-                <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                <p><small>Copyright © 2022 - All right reserved by ALLFORM Industries Ltd</small></p>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
 import DisplayCategories from '../DisplayCategories/DisplayCategories';
 
 const Categories = () => {
@@ -16,15 +17,17 @@ const Categories = () => {
     }, [])
     return (
         <div>
-            {loading ? <div>Loading....</div> :  <><h2 className='text-center mt-16 text-3xl text-primary font-bold'>All Categories</h2>
-            <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-8 justify-around my-16'>
+            {loading ? <Loading></Loading> :  <>
+            <h2 className='text-center mb-16 text-3xl text-primary font-bold'>All Categories</h2>
+            <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-8'>
             {
                 categories.map(category => <DisplayCategories
                 key={category._id}
                 category = {category}
                 ></DisplayCategories> )
             }
-        </div></>}
+        </div>
+        </>}
         </div>
     );
 };
