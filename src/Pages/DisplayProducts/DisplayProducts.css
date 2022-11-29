@@ -6,11 +6,12 @@
 }
 
 .button-bg {
-  background: linear-gradient(45deg, #d0d6d4, hsl(6, 85%, 24%));
+  background: linear-gradient(45deg, #f7075b, hsl(0, 91%, 32%));
   color: black;
   border: none;
 }
 .button-bg:hover {
-  background: linear-gradient(45deg, #8e9b97, hsl(6, 58%, 31%));
+  background: linear-gradient(45deg, #ae5151, hsl(339, 83%, 50%));
   padding: 25px 30px;
+  color: black;
 }

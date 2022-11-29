@@ -21,6 +21,18 @@ const LogIn = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            const userInfo ={name: user?.name, email: user?.email, role:"Buyer"};
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        })
+        .then(res => res.json())
+        .then(data =>{
+          console.log(data)
+        })
             toast.success('User Created Successfully !!!')
         })
         .catch(error =>{

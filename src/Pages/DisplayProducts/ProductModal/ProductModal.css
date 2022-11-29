@@ -1,1 +1,6 @@
-
+.modal-bg {
+  background: linear-gradient(45deg, rgb(174, 188, 181), hsl(160, 2%, 33%));
+}
+.modal-bg:hover {
+  background: linear-gradient(45deg, rgb(166, 174, 170), hsl(160, 1%, 42%));
+}

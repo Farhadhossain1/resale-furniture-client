@@ -1,7 +1,7 @@
-.category-bg {
+.category-bgg {
   background: linear-gradient(45deg, rgb(195, 219, 207), hsl(160, 2%, 33%));
 }
-.category-bg:hover {
+.category-bgg:hover {
   background: linear-gradient(45deg, rgb(150, 233, 191), hsl(163, 29%, 88%));
   width: 420px;
 }

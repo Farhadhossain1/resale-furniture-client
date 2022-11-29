@@ -1,0 +1,6 @@
+.product-bg {
+  background: linear-gradient(45deg, rgb(195, 219, 207), hsl(160, 2%, 33%));
+}
+.product-bg:hover {
+  background: linear-gradient(45deg, rgb(150, 233, 191), hsl(163, 29%, 88%));
+}

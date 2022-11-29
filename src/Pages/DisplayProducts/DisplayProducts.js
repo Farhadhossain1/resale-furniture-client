@@ -41,7 +41,7 @@ const DisplayProducts = ({product, setCategoryProduct}) => {
     <div className="card-actions justify-start">
       <label htmlFor="product-modal" 
       onClick={() => setCategoryProduct(product)}
-      className="btn button-bg">Buy Now</label>
+      className="btn btn-sm button-bg">Buy Now</label>
     </div>
   </div>
 </div>

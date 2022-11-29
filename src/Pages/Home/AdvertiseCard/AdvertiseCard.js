@@ -3,9 +3,7 @@ import React from 'react';
 const AdvertiseCard = ({product}) => {
     return (
         <div>
-            <h1 className=' font-bold text-4xl'>This is Product</h1>
-
-            <div className="card w-96 bg-base-100 shadow-xl mt-16 category-bg">
+            <div className="card w-96 bg-base-100 shadow-xl mt-16 card-bg">
                             <figure><img src={product.image} alt="Shoes" /></figure>
                             <div className="card-body">
                               <h2 className="card-title">

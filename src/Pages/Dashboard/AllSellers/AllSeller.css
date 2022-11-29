@@ -1,0 +1,10 @@
+.verify-bg {
+  background: linear-gradient(45deg, #04f186, hsl(127, 50%, 68%));
+  border: none;
+  border-radius: 20px;
+}
+.delete-bg {
+  background: linear-gradient(45deg, #b80404, hsl(0, 82%, 56%));
+  border: none;
+  border-radius: 20px;
+}
