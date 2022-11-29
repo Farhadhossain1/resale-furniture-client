@@ -21,7 +21,7 @@ const LogIn = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
-            const userInfo ={name: user?.name, email: user?.email, role:"Buyer"};
+            const userInfo ={name: user?.displayName, email: user?.email, role:"Buyer"};
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {

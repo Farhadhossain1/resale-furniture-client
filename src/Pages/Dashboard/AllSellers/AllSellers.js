@@ -1,12 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import './AllSeller.css';
 
 
 
 const AllSellers = () => {
-    
-    const {data: sellers = []} = useQuery({
+  const [deleteSeller , setDeleteSeller ] =  useState(null);
+
+  const  closeSellerModal = () =>{
+    setDeleteSeller(null);
+  }
+
+     
+    const {data: sellers = [], refetch} = useQuery({
         queryKey: ["sellers"],
         queryFn: async() =>{
             try {
@@ -18,6 +26,21 @@ const AllSellers = () => {
             }
         }
     }) 
+
+
+    const handleDeleteSeller = seller =>{
+      fetch(`http://localhost:5000/sellers/${seller._id}`, {
+        method: 'DELETE', 
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.deletedCount > 0){
+            refetch();
+            toast.success(`"${seller.name}" deleted successfully`)
+        }
+    })
+    }
+    
     return (
         <div>
              <div>
@@ -40,12 +63,18 @@ const AllSellers = () => {
         <td className='font-bold'>{seller.name}</td>
         <td className='font-bold'>{seller.email}</td>
         <td><button class=" btn-sm verify-bg  font-bold">Verify</button></td>
-        <td><button className='delete-bg font-bold btn-sm'>Delete</button></td>
+        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteSeller(seller)} className='delete-bg font-bold btn-sm'>Delete</label></td>
       </tr>)}
     </tbody>
   </table>
 </div>
         </div>
+                {deleteSeller && <ConfirmationModal title={`Are you sure you want to delete?`}
+                    message={`If you delete ${deleteSeller.name}. It cannot be undone.`}
+                    successAction = {handleDeleteSeller}
+                    successButtonName="Delete"
+                    modalData = {deleteSeller}
+                    closeModal = {closeSellerModal}></ConfirmationModal>}
         </div>
     );
 };
