@@ -18,7 +18,7 @@ const AllSellers = () => {
         queryKey: ["sellers"],
         queryFn: async() =>{
             try {
-                const res = await fetch("http://localhost:5000/sellers");
+                const res = await fetch("https://asm-used-server.vercel.app/sellers");
                 const data = res.json();
                 return data;                 
             } catch (error) {
@@ -29,7 +29,7 @@ const AllSellers = () => {
 
 
     const handleDeleteSeller = seller =>{
-      fetch(`http://localhost:5000/sellers/${seller._id}`, {
+      fetch(`https://asm-used-server.vercel.app/sellers/${seller._id}`, {
         method: 'DELETE', 
     })
     .then(res => res.json())

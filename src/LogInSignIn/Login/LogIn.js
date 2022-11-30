@@ -26,7 +26,7 @@ const LogIn = () => {
             const user = result.user;
             console.log(user);
             const userInfo ={name: user?.displayName, email: user?.email, role:"Buyer"};
-        fetch('http://localhost:5000/users', {
+        fetch('https://asm-used-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -100,7 +100,7 @@ const LogIn = () => {
                                 loginError && <p className='text-red-500'>{loginError}</p>
                             }
             </form>
-            <p>New to AllForm <Link className='text-secondary' to="/signup"><strong>Create new Account</strong></Link></p>
+            <p>New to AllForm <Link className='text-red-700' to="/signup"><strong>Create new Account</strong></Link></p>
             <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline btn-success w-full'><FcGoogle className='text-2xl mx-2'></FcGoogle>CONTINUE WITH GOOGLE</button>
             </div>

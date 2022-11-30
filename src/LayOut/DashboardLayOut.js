@@ -23,12 +23,11 @@ const DashboardLayOut = () => {
     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
    
-      {/* <li><a>Sidebar Item 1</a></li> */}
       {isBuyer && <><li><Link className='text-xl font-semibold text-white bg-slate-700' to="/dashboard/buyer/myOrders">My Orders</Link></li>
       </>}
       
       {isSeller && <><li><Link className='text-xl font-semibold text-white bg-slate-700' to="/dashboard/seller/addProduct">Add Product</Link></li>
-      <li><Link to="/dashboard/seller/myProducts">My Products</Link></li></>}
+      <li><Link className='text-xl font-semibold text-white bg-slate-700 mt-3' to="/dashboard/seller/myProducts">My Products</Link></li></>}
       
       {isAdmin && <><li><Link className='text-xl font-semibold text-white bg-slate-700' to="/dashboard/admin/allSellers">All Sellers</Link></li>
       <li><Link className='text-xl font-semibold text-white bg-slate-700 mt-4' to="/dashboard/admin/allBuyers">All Buyers</Link></li></>}

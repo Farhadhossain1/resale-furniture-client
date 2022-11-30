@@ -8,7 +8,7 @@ const Categories = () => {
 
     useEffect( () => {
         setLoading(true);
-        fetch('http://localhost:5000/categoryName')
+        fetch('https://asm-used-server.vercel.app/categoryName')
         .then(res => res.json())
         .then(data =>{
             setLoading(false);

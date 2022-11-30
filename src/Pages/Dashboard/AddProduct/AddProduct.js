@@ -44,7 +44,7 @@ const AddProduct = () => {
               }
 
               
-              fetch('http://localhost:5000/products', {
+              fetch('https://asm-used-server.vercel.app/products', {
                   method: 'POST',
                   headers: {
                       'content-type': 'application/json', 
@@ -63,8 +63,6 @@ const AddProduct = () => {
       })
   }
     
-
-
     return (
         <div className='h-[1300px] flex justify-center items-center my-16'>
           <div className='w-[550px] p-12 bg-form  border-form'>
@@ -84,8 +82,6 @@ const AddProduct = () => {
                 required
               />
             </div>
-
-
             <div className="form-control w-full mt-5">
               <label className="label">
                 {" "}
@@ -99,8 +95,7 @@ const AddProduct = () => {
                 className="input input-bordered w-full  "
                 required
               />
-            </div>
-            
+            </div>           
             <div className="form-control w-full mt-5">
               <label className="label">
                 {" "}
@@ -115,7 +110,6 @@ const AddProduct = () => {
                 required
               />
             </div>
-
             <div className='mt-5'>
                           <label className="label">
                             {" "}
@@ -131,8 +125,7 @@ const AddProduct = () => {
                             <option>Good</option>
                             <option>Fair</option>
                           </select>
-                    </div> 
-                        
+                    </div>                  
             <div className="form-control w-full mt-5">
               <label className="label">
                 {" "}
@@ -147,7 +140,6 @@ const AddProduct = () => {
                 required
               />
             </div>
-
             <div className='mt-5'>
                           <label className="label">
                             {" "}
@@ -169,7 +161,6 @@ const AddProduct = () => {
                             <option>		Sylhet</option>
                           </select>
           </div>
-
             <div className='mt-5'>
                           <label className="label">
                             {" "}
@@ -186,7 +177,6 @@ const AddProduct = () => {
                             <option>LivingRoom</option>
                           </select>
           </div>
-          
           <div className="form-control w-full mt-5">
               <label className="label">
                 {" "}
@@ -201,7 +191,6 @@ const AddProduct = () => {
                 required
               />
             </div>
-
           <div className="form-control w-full mt-5">
               <label className="label">
                 {" "}
@@ -216,7 +205,6 @@ const AddProduct = () => {
                 required
               />
             </div>
-
           <div className="form-control w-full mt-5">
               <label className="label">
                 {" "}
@@ -230,15 +218,13 @@ const AddProduct = () => {
                 className="input input-bordered w-full  "
                 required
               />
-            </div>
-          
-            <div className="form-control w-full ">
-                    <label className="label"> <span className="label-text">Photo</span></label>
+            </div>    
+            <div className="form-control w-full mt-5">
+                    <label className="label"> <span className="label-text font-serif font-semibold">Upload Your Product Photo</span></label>
                     <input type="file" {...register("image", {
                         required: "Photo is Required"
                     })} className="input input-bordered w-full " />
-                </div>
-          
+                </div>       
                 <input className='btn btn-accent w-full mt-16 btn-success' value="Add Product" type="submit" />
             </form>
         </div>

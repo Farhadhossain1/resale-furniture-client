@@ -7,7 +7,7 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://asm-used-server.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -28,8 +28,8 @@ const MyOrders = () => {
       <tr>
         <th></th>
         <th className='text-xl font-semibold'>Name</th>
-        <th className='text-xl font-semibold'>Job</th>
-        <th className='text-xl font-semibold'>Favorite Color</th>
+        <th className='text-xl font-semibold'>Email</th>
+        <th className='text-xl font-semibold'>Address</th>
       </tr>
     </thead>
     <tbody>

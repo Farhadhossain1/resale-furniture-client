@@ -15,7 +15,7 @@ const AllBuyers = () => {
         queryKey: ["buyers"],
         queryFn: async() =>{
             try {
-                const res = await fetch("http://localhost:5000/buyers");
+                const res = await fetch("https://asm-used-server.vercel.app/buyers");
                 const data = res.json();
                 return data;                 
             } catch (error) {
@@ -25,7 +25,7 @@ const AllBuyers = () => {
     }) 
 
     const handleDeleteBuyer = buyer =>{
-      fetch(`http://localhost:5000/buyers/${buyer._id}`, {
+      fetch(`https://asm-used-server.vercel.app/buyers/${buyer._id}`, {
         method: 'DELETE', 
     })
     .then(res => res.json())
@@ -36,8 +36,6 @@ const AllBuyers = () => {
         }
     })
     }
-
-
     return (
         <div>
              <div>
@@ -58,7 +56,7 @@ const AllBuyers = () => {
         <th>{i+1}</th>
         <td className='font-bold'>{buyer.name}</td>
         <td className='font-bold'>{buyer.email}</td>
-        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteBuyer(buyer)} className='btn delete-bg font-bold'>Delete</label></td>
+        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteBuyer(buyer)} className='btn delete-bg text-black font-bold'>Delete</label></td>
       </tr>)}
     </tbody>
   </table>

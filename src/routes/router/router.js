@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/categoryName/:name',
                 element: <PrivateRoute><AllProducts></AllProducts></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/categoryName/${params.name}`)
+                loader: ({params}) => fetch(`https://asm-used-server.vercel.app/categoryName/${params.name}`)
             }
         ]
     },

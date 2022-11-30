@@ -39,7 +39,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, role) =>{
         const user ={name, email, role};
-        fetch('http://localhost:5000/users', {
+        fetch('https://asm-used-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -68,9 +68,9 @@ const SignUp = () => {
                         </div> 
 
                   <div>
-                          <label className="label">
+                          <label className="label my-3">
                             {" "}
-                            <span className="label-text">Select Your Account</span>
+                            <span className="label-text  text-xl font-semibold py-4">Select Your Account</span>
                           </label>
                           <select
                             className="select select-bordered w-full"
@@ -88,7 +88,7 @@ const SignUp = () => {
                        
 
             <div className="form-control w-full ">
-                        <label className="label">
+                        <label className="label ">
                         <span className="label-text text-xl font-semibold py-4">Email</span>
                         </label>
                         <input type="email"  {...register("email", 
@@ -113,7 +113,7 @@ const SignUp = () => {
                         <span className="label-text text-xl ">Forget password</span>
                         </label>
                         </div>
-                        <p>Already have an account <Link className='text-secondary' to="/login"><strong>Please Log In</strong></Link></p>
+                        <p>Already have an account <Link className='text-red-700' to="/login"><strong>Please Log In</strong></Link></p>
                         <input className='btn btn-success my-6 text-semibold text-black w-full' value="Sign up" type="submit" />
 
         </form>
