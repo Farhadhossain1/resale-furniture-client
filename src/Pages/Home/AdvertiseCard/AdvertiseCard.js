@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AdvertiseCard = ({product}) => {
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl mb-16 card-bg">
+            <div className="card w-96 h-[500px] bg-base-100 shadow-xl mb-16 card-bg">
                             <figure><img src={product.image} alt="Shoes" /></figure>
                             <div className="card-body">
                               <h2 className="card-title">
