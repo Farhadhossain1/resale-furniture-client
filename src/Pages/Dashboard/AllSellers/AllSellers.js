@@ -44,7 +44,7 @@ const AllSellers = () => {
     return (
         <div>
              <div>
-            <h1 className='text-3xl font-semibold text-gray-600'>All Seller Details !!</h1>
+            <h1 className='text-3xl font-semibold text-gray-700'>All Seller Details !!</h1>
             <div className="overflow-x-auto py-10">
   <table className="table w-full">
 
@@ -62,8 +62,8 @@ const AllSellers = () => {
         <th>{i+1}</th>
         <td className='font-bold'>{seller.name}</td>
         <td className='font-bold'>{seller.email}</td>
-        <td><button class=" btn-sm verify-bg  font-bold">Verify</button></td>
-        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteSeller(seller)} className='delete-bg font-bold btn-sm'>Delete</label></td>
+        <td><button class=" btn text-black verify-bg  font-bold">Verify</button></td>
+        <td><label htmlFor="confirmation-modal" onClick={()=>setDeleteSeller(seller)} className='btn delete-bg font-bold text-black'>Delete</label></td>
       </tr>)}
     </tbody>
   </table>
